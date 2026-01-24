@@ -1,0 +1,29 @@
+---
+import Layout from "../../layouts/default.astro";
+import Header from "../../components/Header.astro";
+import { marked } from "marked";
+
+const response = await fetch(
+	"https://raw.githubusercontent.com/CaffeinatedOpe/infrastructure-as-code/refs/heads/master/README.md",
+);
+const markdown = await response.text();
+const content = marked.parse(markdown);
+---
+
+<title>Projects</title>
+
+<Layout>
+	<Header />
+	<div class="p-4 flex items-center justify-center">
+		<h1 class="text-4xl bg-ctp-mantle p-4 rounded-2xl">Projects</h1>
+	</div>
+	<div class="flex flex-row flex-wrap items-center justify-center text-l">
+		<a
+			href="/projects/iac"
+			class="p-4 flex flex-1 max-w-128 basis-full flex-col bg-ctp-mantle rounded-2xl items-center"
+		>
+			<div class="text-2xl">Infrastructure as Code</div>
+			<div>The entirety of my homelab, all written down in code</div>
+		</a>
+	</div>
+</Layout>

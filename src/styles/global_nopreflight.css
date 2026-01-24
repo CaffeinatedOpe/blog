@@ -1,0 +1,16 @@
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+@import "@catppuccin/tailwindcss/mocha.css";
+
+body {
+	margin: 0%;
+	padding: 0%;
+	font-family: "JetBrainsMono";
+}
+@font-face {
+	font-family: "JetBrainsMono";
+	font-style: normal;
+	font-weight: 500;
+	src: url("../assets/fonts/JetBrainsMono-Medium.woff2") format("woff2");
+}

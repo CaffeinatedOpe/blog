@@ -1,0 +1,53 @@
+---
+import Layout from "../layouts/default.astro";
+import Header from "../components/Header.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog")).sort(
+	(a, b) => b.data.sortDate.valueOf() - a.data.sortDate.valueOf(),
+);
+---
+
+<title>CaffeinatedOpe's Homepage</title>
+
+<Layout>
+	<Header />
+	<div class="grid lg:grid-cols-2 grid-cols-1 align-center w-full">
+		<div>
+			<div class="p-4 flex items-center justify-center">
+				<h1 class="text-4xl bg-ctp-mantle p-4 rounded-2xl">Latest Projects</h1>
+			</div>
+			<div class="flex flex-row flex-wrap items-center justify-center text-l">
+				<a
+					href="/projects/iac"
+					class="p-4 flex flex-1 max-w-128 basis-full flex-col bg-ctp-mantle rounded-2xl items-center"
+				>
+					<div class="text-2xl">Infrastructure as Code</div>
+					<div>The entirety of my homelab, <i>mostly</i> written down in code</div>
+				</a>
+			</div>
+		</div>
+		<div>
+			<div class="p-4 flex items-center justify-center">
+				<h1 class="text-4xl bg-ctp-mantle p-4 rounded-2xl">Latest Blogs</h1>
+			</div>
+			<div class="flex flex-row flex-wrap items-center justify-center text-l">
+				{
+					posts.map((post) => (
+						<div class="flex flex-row flex-wrap items-center justify-center text-l">
+							<a
+								href={`/blog/${post.id}`}
+								class="p-4 flex flex-1 max-w-128 basis-full flex-col bg-ctp-mantle rounded-2xl items-center"
+							>
+								<div class="text-2xl">
+									{post.data.date}: {post.data.title}
+								</div>
+								<div>{post.data.description}</div>
+							</a>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</div>
+</Layout>

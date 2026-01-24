@@ -1,0 +1,61 @@
+---
+import pfp from '../assets/pfp.png';
+import { Image } from 'astro:assets';
+---
+
+<style>
+	@import "tailwindcss/preflight.css" layer(base);
+	#menu-toggle:checked + #menu {
+		display: block;
+	}
+</style>
+<header class="lg:px-16 px-6 flex flex-wrap items-center justify-center lg:py-0 py-2 bg-ctp-mantle">
+	<div class="flex justify-between items-center content-center">
+		<a href="/">
+			<Image src={pfp} alt="CaffeinatedOpe's pfp" class="pfp size-[5vmin] m-[2vmin] rounded-lg" />
+		</a>
+	</div>
+
+	<label for="menu-toggle" class="pointer-cursor lg:hidden block"
+		><svg
+			class="fill-current"
+			xmlns="http://www.w3.org/2000/svg"
+			width="20"
+			height="20"
+			viewBox="0 0 20 20"
+			><title>menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"
+			></path></svg
+		></label
+	>
+	<input class="hidden" type="checkbox" id="menu-toggle" />
+
+	<div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
+		<nav>
+			<ul class="lg:flex items-center justify-between text-base pt-4 lg:pt-0">
+				<li>
+					<a
+						class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-ctp-mauve-400"
+						href="/blog">Blog</a>
+				</li>
+				<li>
+					<a
+						class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-ctp-mauve-400"
+						href="/projects">Projects</a>
+				</li>
+				<li>
+					<a
+						class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-ctp-mauve-400"
+						href="/aboutme">About Me</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<style lang="postcss">
+	@reference "tailwindcss";
+	.pfp {
+		width: auto;
+		margin: 2vmin;
+	}
+</style>

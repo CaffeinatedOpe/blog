@@ -1,0 +1,27 @@
+---
+import Layout from "../../layouts/nopreflight.astro";
+import Header from "../../components/Header.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog")).sort(
+	(a, b) => b.data.sortDate.valueOf() - a.data.sortDate.valueOf(),
+);
+---
+
+<title>Blog</title>
+
+<Layout>
+	<Header />
+	<h1>Page Under Construction</h1>
+	<ul>
+		{
+			posts.map((post) => (
+				<li>
+					<a href={`/blog/${post.id}`}>
+						{post.data.date}: {post.data.title}
+					</a>
+				</li>
+			))
+		}
+	</ul>
+</Layout>

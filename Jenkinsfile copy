@@ -6,8 +6,8 @@ pipeline {
             kind: Pod
             spec:
               containers:
-              - name: buildah
-                image: docker://quay.io/buildah/stable:latest
+              - name: docker
+                image: docker:latest
                 command:
                 - cat
                 tty: true
@@ -25,7 +25,7 @@ pipeline {
         stage('Build-Docker-Image') {
       steps {
         container('docker') {
-          sh 'buildah build -t blog:latest .'
+          sh 'docker build -t blog:latest .'
         }
       }
         }
@@ -33,7 +33,7 @@ pipeline {
       steps {
         container('docker') {
           withCredentials([usernamePassword(credentialsId: 'ghcr-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-            sh 'buildah login -u $USERNAME -p $PASSWORD'
+            sh 'docker login -u $USERNAME -p $PASSWORD'
           }
         }
       }
@@ -41,7 +41,7 @@ pipeline {
         stage('Push-Images-Docker-to-DockerHub') {
       steps {
         container('docker') {
-          sh 'buildah push blog:latest'
+          sh 'docker push blog:latest'
         }
       }
         }
@@ -49,7 +49,7 @@ pipeline {
     post {
         always {
       container('docker') {
-        sh 'buildah logout'
+        sh 'docker logout'
       }
         }
     }

@@ -9,7 +9,7 @@ pipeline {
               - name: buildah
                 image: quay.io/buildah/stable:latest
                 command:
-                - ls
+                - cat
                 tty: true
             '''
         }
@@ -18,7 +18,7 @@ pipeline {
         stage('clone') {
       steps {
         container('buildah') {
-          git branch: 'main', changelog: false, poll: false, url: 'https://mohdsabir-cloudside@bitbucket.org/mohdsabir-cloudside/java-app.git'
+          git branch: 'master', changelog: false, poll: true, url: 'https://github.com/CaffeinatedOpe/blog'
         }
       }
         }

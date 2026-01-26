@@ -1,4 +1,4 @@
-FROM hub.docker.com/node:25-alpine
+FROM node:25-alpine
 WORKDIR /app
 COPY package*.json ./
 COPY *config.js ./

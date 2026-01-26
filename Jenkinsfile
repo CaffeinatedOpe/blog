@@ -7,7 +7,7 @@ pipeline {
             spec:
               containers:
               - name: buildah
-                image: docker://quay.io/buildah/stable:latest
+                image: quay.io/buildah/stable:latest
                 command:
                 - cat
                 tty: true

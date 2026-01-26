@@ -9,7 +9,7 @@ pipeline {
               - name: buildah
                 image: quay.io/buildah/stable:latest
                 command:
-                - cat
+                - ls
                 tty: true
             '''
         }

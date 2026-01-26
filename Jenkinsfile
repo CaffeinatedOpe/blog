@@ -15,32 +15,32 @@ pipeline {
         }
     }
     stages {
-        stage('Clone') {
+        stage('clone') {
       steps {
-        container('docker') {
+        container('buildah') {
           git branch: 'main', changelog: false, poll: false, url: 'https://mohdsabir-cloudside@bitbucket.org/mohdsabir-cloudside/java-app.git'
         }
       }
         }
-        stage('Build-Docker-Image') {
+        stage('build') {
       steps {
-        container('docker') {
+        container('buildah') {
           sh 'buildah build -t blog:latest .'
         }
       }
         }
-        stage('Login-Into-Docker') {
+        stage('login') {
       steps {
-        container('docker') {
+        container('buildah') {
           withCredentials([usernamePassword(credentialsId: 'ghcr-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
             sh 'buildah login -u $USERNAME -p $PASSWORD'
           }
         }
       }
         }
-        stage('Push-Images-Docker-to-DockerHub') {
+        stage('push') {
       steps {
-        container('docker') {
+        container('buildah') {
           sh 'buildah push blog:latest'
         }
       }
@@ -48,7 +48,7 @@ pipeline {
     }
     post {
         always {
-      container('docker') {
+      container('buildah') {
         sh 'buildah logout'
       }
         }

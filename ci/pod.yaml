@@ -6,9 +6,6 @@ spec:
   containers:
     - name: buildkit
       image: moby/buildkit:latest
-      envFrom:
-        - configMapRef:
-          name: build-config
       volumeMounts:
         - name: registry-creds
           mountPath: /root/.docker

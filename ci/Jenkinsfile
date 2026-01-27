@@ -1,0 +1,23 @@
+pipeline {
+  agent {
+      kubernetes {
+        yamlFile 'examples/declarative_from_yaml_file/KubernetesPod.yaml'
+      }
+  }
+  stages {
+    stage('clone') {
+    	steps {
+      	container('buildkit') {
+        	git branch: 'master', changelog: false, poll: true, url: 'https://github.com/CaffeinatedOpe/blog'
+      	}
+    	}
+    }
+    stage('build and push') {
+    	steps {
+      	container('buildkit') {
+        	sh 'buildctl-daemonless.sh build . --output type=image,name=ghcr.io/CaffeinatedOpe/blog,push=true'
+      	}
+    	}
+    }
+	}
+}

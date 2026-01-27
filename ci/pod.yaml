@@ -12,9 +12,6 @@ spec:
         - name: registry-creds
           mountPath: /root/.docker
           readOnly: true
-        - name: workspace
-          mountPath: /blog
-          readOnly: false
   volumes:
     - name: registry-creds
       secret:
@@ -23,5 +20,3 @@ spec:
         items:
           - key: .dockerconfigjson
             path: config.json
-    - name: workspace
-      emptyDir: {}

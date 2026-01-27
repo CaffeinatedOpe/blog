@@ -1,23 +1,26 @@
 pipeline {
   agent {
-      kubernetes {
-        yamlFile 'ci/pod.yaml'
-      }
+   	kubernetes {
+      yamlFile 'ci/pod.yaml'
+  	}
   }
+	triggers {
+		pollscm('*/5 * * * *')
+	}
   stages {
     stage('clone') {
-    	steps {
-      	container('buildkit') {
-        	git branch: 'master', changelog: false, poll: false, url: 'https://github.com/caffeinatedope/blog'
-      	}
-    	}
+      steps {
+        container('buildkit') {
+          git branch: 'master', changelog: false, poll: false, url: 'https://github.com/caffeinatedope/blog'
+        }
+      }
     }
     stage('build and push') {
-    	steps {
-      	container('buildkit') {
-        	sh 'buildctl-daemonless.sh build . --output type=image,name=ghcr.io/caffeinatedope/blog,push=true --frontend dockerfile.v0 --local context=. --local dockerfile=.'
-      	}
-    	}
+      steps {
+        container('buildkit') {
+          sh 'buildctl-daemonless.sh build . --output type=image,name=ghcr.io/caffeinatedope/blog,push=true --frontend dockerfile.v0 --local context=. --local dockerfile=.'
+        }
+      }
     }
-	}
+  }
 }

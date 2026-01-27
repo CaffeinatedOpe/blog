@@ -9,7 +9,7 @@ pipeline {
     	steps {
       	container('buildkit') {
         	git branch: 'master', changelog: false, poll: false, url: 'https://github.com/CaffeinatedOpe/blog'
-					sh 'mv blog/* /blog'
+					sh 'mv * /blog'
 					sh 'cd /blog'
       	}
     	}

@@ -1,0 +1,16 @@
+{
+	"iac": {
+		"id": "iac",
+		"title": "Infrastructure as Code",
+		"url": "https://github.com/CaffeinatedOpe/infrastructure-as-code",
+		"readMeUrl": "https://raw.githubusercontent.com/CaffeinatedOpe/infrastructure-as-code/refs/heads/master/README.md",
+		"description": "The entirety of my homelab, mostly written down in code"
+	},
+	"blog": {
+		"id": "blog",
+		"title": "Blog",
+		"url": "https://github.com/CaffeinatedOpe/blog",
+		"readMeUrl": "https://raw.githubusercontent.com/CaffeinatedOpe/blog/refs/heads/master/README.md",
+		"description": "The source code to my blog"
+	}
+}

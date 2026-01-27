@@ -1,13 +1,9 @@
 ---
 import Layout from "../../layouts/default.astro";
 import Header from "../../components/Header.astro";
-import { marked } from "marked";
+import { getCollection } from "astro:content";
 
-const response = await fetch(
-	"https://raw.githubusercontent.com/CaffeinatedOpe/infrastructure-as-code/refs/heads/master/README.md",
-);
-const markdown = await response.text();
-const content = marked.parse(markdown);
+const projects = (await getCollection("github"));
 ---
 
 <title>Projects</title>
@@ -17,22 +13,19 @@ const content = marked.parse(markdown);
 	<div class="flex items-center justify-center my-4">
 		<div class="text-4xl bg-ctp-mantle p-4 rounded-2xl">Projects</div>
 	</div>
-	<div class="flex flex-row flex-wrap items-center justify-center text-l m-4">
-		<a
-			href="/projects/iac"
-			class="p-4 flex flex-1 max-w-128 basis-full flex-col bg-ctp-mantle rounded-2xl items-center"
-		>
-			<div class="text-2xl">Infrastructure as Code</div>
-			<div>The entirety of my homelab, <i>mostly</i> written down in code</div>
-		</a>
-	</div>
-	<div class="flex flex-row flex-wrap items-center justify-center text-l m-4">
-		<a
-			href="/projects/iac"
-			class="p-4 flex flex-1 max-w-128 basis-full flex-col bg-ctp-mantle rounded-2xl items-center"
-		>
-			<div class="text-2xl">Blog</div>
-			<div>The source code to the blog you're on</div>
-		</a>
-	</div>
+	{
+					projects.map((project) => (
+						<div class="flex flex-row flex-wrap items-center justify-center text-l p-4">
+							<a
+								href={`/projects/${project.id}`}
+								class="p-4 flex flex-1 max-w-128 basis-full flex-col bg-ctp-mantle rounded-2xl items-center"
+							>
+								<div class="text-2xl">
+									{project.data.title}
+								</div>
+								<div>{project.data.description}</div>
+							</a>
+						</div>
+					))
+				}
 </Layout>

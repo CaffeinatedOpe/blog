@@ -4,8 +4,9 @@ import Header from "../components/Header.astro";
 import { getCollection } from "astro:content";
 
 const posts = (await getCollection("blog")).sort(
-	(a, b) => b.data.sortDate.valueOf() - a.data.sortDate.valueOf(),
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+const projects = (await getCollection("github"));
 ---
 
 <title>Homepage</title>
@@ -16,31 +17,22 @@ const posts = (await getCollection("blog")).sort(
 			<div class="p-4 flex items-center justify-center">
 				<h1 class="text-4xl bg-ctp-mantle p-4 rounded-2xl">Latest Projects</h1>
 			</div>
-			<div class="">
-				<div
-					class="flex flex-row flex-wrap items-center justify-center text-l p-4"
-				>
-					<a
-						href="/projects/iac"
-						class="p-4 flex flex-1 max-w-128 basis-full flex-col bg-ctp-mantle rounded-2xl items-center"
-					>
-						<div class="text-2xl">Infrastructure as Code</div>
-						<div>
-							The entirety of my homelab, <i>mostly</i> written down in code
+			<div class="flex flex-row flex-wrap items-center justify-center text-l">
+				{
+					projects.map((project) => (
+						<div class="flex flex-row flex-wrap items-center justify-center text-l p-4">
+							<a
+								href={`/projects/${project.id}`}
+								class="p-4 flex flex-1 max-w-128 basis-full flex-col bg-ctp-mantle rounded-2xl items-center"
+							>
+								<div class="text-2xl">
+									{project.data.title}
+								</div>
+								<div>{project.data.description}</div>
+							</a>
 						</div>
-					</a>
-				</div>
-			</div>
-			<div
-				class="flex flex-row flex-wrap items-center justify-center text-l p-4"
-			>
-				<a
-					href="/projects/iac"
-					class="p-4 flex flex-1 max-w-128 basis-full flex-col bg-ctp-mantle rounded-2xl items-center"
-				>
-					<div class="text-2xl">Blog</div>
-					<div>The source code to the blog you're on</div>
-				</a>
+					))
+				}
 			</div>
 		</div>
 		<div class="w-1/2">
@@ -56,7 +48,7 @@ const posts = (await getCollection("blog")).sort(
 								class="p-4 flex flex-1 max-w-128 basis-full flex-col bg-ctp-mantle rounded-2xl items-center"
 							>
 								<div class="text-2xl">
-									{post.data.date}: {post.data.title}
+									{post.data.pubDate.toLocaleDateString('en-US')}: {post.data.title}
 								</div>
 								<div>{post.data.description}</div>
 							</a>

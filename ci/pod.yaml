@@ -1,19 +1,18 @@
 apiVersion: v1
 kind: Pod
+metadata:
+  name: buildkit
 spec:
   containers:
-  - name: buildkit
-    image: docker.io/moby/buildkit:latest
-    command: ["/bin/sh", "/code/build.sh"]
-    securityContext:
-			privileged: true
-		envFrom:
-		- configMapRef:
-		    name: build-config
-		volumeMounts:
-	  - name: registry-creds
-	    mountPath: /root/.docker
-	    readOnly: true
+    - name: buildkit
+      image: moby/buildkit:latest
+      envFrom:
+        - configMapRef:
+          name: build-config
+      volumeMounts:
+        - name: registry-creds
+          mountPath: /root/.docker
+          readOnly: true
   volumes:
     - name: registry-creds
       secret:

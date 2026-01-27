@@ -6,6 +6,8 @@ spec:
   containers:
     - name: buildkit
       image: moby/buildkit:latest
+      securityContext:
+        privileged: true
       volumeMounts:
         - name: registry-creds
           mountPath: /root/.docker

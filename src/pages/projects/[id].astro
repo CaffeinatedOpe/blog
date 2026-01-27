@@ -26,6 +26,6 @@ const content = marked.parse(markdown);
 
 <Layout>
 	<Header />
-	<a href="github.com/CaffeinatedOpe/infrastructure-as-code">Link to the GitHub</a>
+	<a href={project.data.url}>Link to the GitHub</a>
 	<article set:html={content} class="mx-16"/>
 </Layout>

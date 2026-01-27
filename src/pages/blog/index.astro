@@ -12,11 +12,11 @@ const posts = (await getCollection("blog")).sort(
 
 <Layout>
 	<Header />
-	<h1>Page Under Construction</h1>
-	<ul>
-		{
-			posts.map((post) => (
-				<li>
+	<div class="m-16">
+		<ul>
+			{
+				posts.map((post) => (
+					<li>
 					<a href={`/blog/${post.id}`}>
 						{post.data.date}: {post.data.title}
 					</a>
@@ -24,4 +24,5 @@ const posts = (await getCollection("blog")).sort(
 			))
 		}
 	</ul>
+</div>
 </Layout>

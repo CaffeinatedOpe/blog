@@ -8,36 +8,49 @@ const posts = (await getCollection("blog")).sort(
 );
 ---
 
-<title>CaffeinatedOpe's Homepage</title>
-
+<title>Homepage</title>
 <Layout>
 	<Header />
-	<div class="text-4xl align-center">Page Under Construction</div>
-	<div class="grid lg:grid-cols-2 grid-cols-1 align-center w-full">
-		<div>
+	<div class="flex flex-row align-center w-full">
+		<div class="w-1/2">
 			<div class="p-4 flex items-center justify-center">
 				<h1 class="text-4xl bg-ctp-mantle p-4 rounded-2xl">Latest Projects</h1>
 			</div>
-			<div class="flex flex-row flex-wrap items-center justify-center text-l">
+			<div class="">
+				<div
+					class="flex flex-row flex-wrap items-center justify-center text-l p-4"
+				>
+					<a
+						href="/projects/iac"
+						class="p-4 flex flex-1 max-w-128 basis-full flex-col bg-ctp-mantle rounded-2xl items-center"
+					>
+						<div class="text-2xl">Infrastructure as Code</div>
+						<div>
+							The entirety of my homelab, <i>mostly</i> written down in code
+						</div>
+					</a>
+				</div>
+			</div>
+			<div
+				class="flex flex-row flex-wrap items-center justify-center text-l p-4"
+			>
 				<a
 					href="/projects/iac"
 					class="p-4 flex flex-1 max-w-128 basis-full flex-col bg-ctp-mantle rounded-2xl items-center"
 				>
-					<div class="text-2xl">Infrastructure as Code</div>
-					<div>
-						The entirety of my homelab, <i>mostly</i> written down in code
-					</div>
+					<div class="text-2xl">Blog</div>
+					<div>The source code to the blog you're on</div>
 				</a>
 			</div>
 		</div>
-		<div>
+		<div class="w-1/2">
 			<div class="p-4 flex items-center justify-center">
 				<h1 class="text-4xl bg-ctp-mantle p-4 rounded-2xl">Latest Blogs</h1>
 			</div>
 			<div class="flex flex-row flex-wrap items-center justify-center text-l">
 				{
 					posts.map((post) => (
-						<div class="flex flex-row flex-wrap items-center justify-center text-l">
+						<div class="flex flex-row flex-wrap items-center justify-center text-l p-4">
 							<a
 								href={`/blog/${post.id}`}
 								class="p-4 flex flex-1 max-w-128 basis-full flex-col bg-ctp-mantle rounded-2xl items-center"

@@ -10,9 +10,9 @@ import { Image } from 'astro:assets';
 	}
 </style>
 <header class="lg:px-16 px-6 flex flex-wrap items-center justify-center lg:py-0 py-2 bg-ctp-mantle">
-	<div class="flex justify-between items-center content-center">
+	<div class="flex justify-between items-center content-center w-16 m-4">
 		<a href="/">
-			<Image src={pfp} alt="CaffeinatedOpe's pfp" class="pfp size-[5vmin] m-[2vmin] rounded-lg" />
+			<Image src={pfp} alt="CaffeinatedOpe's pfp" class="object-contain rounded-lg" />
 		</a>
 	</div>
 
@@ -54,8 +54,4 @@ import { Image } from 'astro:assets';
 
 <style lang="postcss">
 	@reference "tailwindcss";
-	.pfp {
-		width: auto;
-		margin: 2vmin;
-	}
 </style>

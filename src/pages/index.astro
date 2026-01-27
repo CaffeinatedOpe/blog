@@ -12,8 +12,8 @@ const projects = (await getCollection("github"));
 <title>Homepage</title>
 <Layout>
 	<Header />
-	<div class="flex flex-row align-center w-full">
-		<div class="w-1/2">
+	<div class="flex flex-row flex-wrap align-center w-full">
+		<div class="lg:w-1/2 w-full max-content">
 			<div class="p-4 flex items-center justify-center">
 				<h1 class="text-4xl bg-ctp-mantle p-4 rounded-2xl">Latest Projects</h1>
 			</div>
@@ -35,7 +35,7 @@ const projects = (await getCollection("github"));
 				}
 			</div>
 		</div>
-		<div class="w-1/2">
+		<div class="lg:w-1/2 w-full max-content">
 			<div class="p-4 flex items-center justify-center">
 				<h1 class="text-4xl bg-ctp-mantle p-4 rounded-2xl">Latest Blogs</h1>
 			</div>

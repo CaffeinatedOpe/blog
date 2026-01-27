@@ -8,8 +8,7 @@ pipeline {
     stage('clone') {
     	steps {
       	container('buildkit') {
-        	git branch: 'master', changelog: false, poll: true, url: 'https://github.com/CaffeinatedOpe/blog'
-					sh 'cd blog'
+        	git branch: 'master', changelog: false, poll: false, url: 'https://github.com/CaffeinatedOpe/blog'
       	}
     	}
     }

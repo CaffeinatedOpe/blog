@@ -1,2 +1,3 @@
-# go see the blog at [caffeinatedope.net](caffeinatedope.net)
-better readme coming... eventually
+# Go see the blog at [caffeinatedope.net!](caffeinatedope.net)
+### okay fine, I'll explain how it works
+The blog uses the Astro framework, as it's a good middle ground between dynamic content and static functionality. I'm able to pull the newest media and render the page on the server, which means that the client doesn't have to run any js for the page to work as intended. All of the blog posts get dumped into a folder in the source code, which means that the site needs to be redeployed for each post. Fine with me, since the builds are pretty quick. The github projects are a bit trickier, since I might not rebuild the site every time I change the readme to a github. So, the metadata I want for the projects (title, description, url, readme url) are stored in json, which the Astro server reads at initiization. When a project page gets requested, Astro pulls in the latest readme using Marked, styles it, and pushes it to the client. Works quite well, although my styling leaves something to be desired.

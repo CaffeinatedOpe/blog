@@ -1,6 +1,5 @@
 ---
 import Layout from "../../layouts/nopreflight.astro";
-import Header from "../../components/Header.astro";
 import { getEntry, render } from "astro:content";
 // 1. Generate a new path for every collection entry
 const { id } = Astro.params;
@@ -19,7 +18,6 @@ const { Content } = await render(post);
 
 <title>{post.data.title}</title>
 <Layout>
-	<Header />
 	<div class="mx-16">
 		<Content />
 	</div>

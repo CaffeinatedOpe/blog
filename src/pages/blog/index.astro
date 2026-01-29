@@ -1,6 +1,5 @@
 ---
 import Layout from "../../layouts/nopreflight.astro";
-import Header from "../../components/Header.astro";
 import { getCollection } from "astro:content";
 
 const posts = (await getCollection("blog")).sort(
@@ -11,7 +10,6 @@ const posts = (await getCollection("blog")).sort(
 <title>Blog</title>
 
 <Layout>
-	<Header />
 	<div class="m-16">
 		<ul>
 			{

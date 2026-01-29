@@ -1,6 +1,5 @@
 ---
 import Layout from "../../layouts/nopreflight.astro";
-import Header from "../../components/Header.astro";
 import { marked } from 'marked';
 
 const response = await fetch(
@@ -14,7 +13,6 @@ const content = marked.parse(markdown);
 <title>About Me</title>
 
 <Layout>
-	<Header />
 	<div class="mx-16">
 		<article set:html={content} class="mx-4"/>
 	</div>

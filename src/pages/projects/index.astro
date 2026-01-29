@@ -1,6 +1,5 @@
 ---
 import Layout from "../../layouts/default.astro";
-import Header from "../../components/Header.astro";
 import { getCollection } from "astro:content";
 
 const projects = (await getCollection("github"));
@@ -9,7 +8,6 @@ const projects = (await getCollection("github"));
 <title>Projects</title>
 
 <Layout>
-	<Header />
 	<div class="flex items-center justify-center my-4">
 		<div class="text-4xl bg-ctp-mantle p-4 rounded-2xl">Projects</div>
 	</div>

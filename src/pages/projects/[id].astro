@@ -1,6 +1,5 @@
 ---
 import Layout from "../../layouts/nopreflight.astro";
-import Header from "../../components/Header.astro";
 import { marked } from 'marked';
 
 import { getEntry, render } from "astro:content";
@@ -25,7 +24,6 @@ const content = marked.parse(markdown);
 <title>Projects</title>
 
 <Layout>
-	<Header />
 	<a href={project.data.url}>Link to the GitHub</a>
 	<article set:html={content} class="mx-4"/>
 </Layout>

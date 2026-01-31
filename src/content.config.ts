@@ -11,11 +11,13 @@ const blog = defineCollection({
 	// `loader` can accept an array of multiple patterns as well as string patterns
 	// Load all markdown files in the space-probes directory, except for those that start with "voyager-"
 	loader: glob({ pattern: ["*.md"], base: "src/data/blog" }),
-	schema: z.object({
+	schema: ({image}) => z.object({
 		title: z.string(),
 		description: z.string(),
 		pubDate: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
+		thumbnail_dark: image(),
+		thumbnail_light: image(),
 	}),
 });
 

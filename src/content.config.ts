@@ -23,12 +23,14 @@ const blog = defineCollection({
 
 const github = defineCollection({
   loader: file("src/data/github-projects.json"),
-  schema: z.object({
+  schema: ({image}) => z.object({
     id: z.string(),
 		title: z.string(),
     description: z.string(),
     url: z.string(),
 		readMeUrl: z.string(),
+		thumbnail_dark: image(),
+		thumbnail_light: image(),
   }),
 });
 

@@ -14,20 +14,22 @@ const posts = (await getCollection("blog")).sort(
 	<div class="p-4 flex items-center justify-center">
 		<h1 class="text-4xl bg-ctp-mantle p-4 rounded-2xl">Blogs</h1>
 	</div>
-	<div class="flex flex-row flex-wrap items-center justify-center text-l gap-4 p-4">
+	<div
+		class="flex flex-row flex-wrap items-center justify-center text-l gap-4 p-4"
+	>
 		{
 			posts.map((post) => (
 				<a
 					href={`/blog/${post.id}`}
 					class="p-4 flex lg:flex-row flex-col flex-1 max-w-175 basis-full flex-col bg-ctp-mantle rounded-2xl items-center"
 				>
-					<div class="flex flex-row flex-wrap items-center justify-center text-l p-4">
+					<div class="flex flex-row flex-wrap items-center justify-center text-l p-4 flex-3">
 						<div class="text-2xl p-4 text-center">
 							{post.data.pubDate.toLocaleDateString("en-US")}: {post.data.title}
 						</div>
 						<div class="text-center">{post.data.description}</div>
 					</div>
-					<div class="min-w-32 aspect-3/2">
+					<div class="min-w-32 aspect-3/2 flex-2">
 						<Image
 							src={post.data.thumbnail_light}
 							class="dark:hidden inline"

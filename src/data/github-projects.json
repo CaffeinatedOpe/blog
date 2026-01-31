@@ -4,13 +4,17 @@
 		"title": "Infrastructure as Code",
 		"url": "https://github.com/CaffeinatedOpe/infrastructure-as-code",
 		"readMeUrl": "https://raw.githubusercontent.com/CaffeinatedOpe/infrastructure-as-code/refs/heads/master/README.md",
-		"description": "The entirety of my homelab, mostly written down in code"
+		"description": "The entirety of my homelab, mostly written down in code",
+		"thumbnail_light": "../assets/project-files/iac_light.png",
+		"thumbnail_dark": "../assets/project-files/iac_dark.png"
 	},
 	"blog": {
 		"id": "blog",
 		"title": "Blog",
 		"url": "https://github.com/CaffeinatedOpe/blog",
 		"readMeUrl": "https://raw.githubusercontent.com/CaffeinatedOpe/blog/refs/heads/master/README.md",
-		"description": "The source code to my blog"
+		"description": "The source code to my blog",
+		"thumbnail_light": "../assets/project-files/blog_light.png",
+		"thumbnail_dark": "../assets/project-files/blog_dark.png"
 	}
 }

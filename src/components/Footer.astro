@@ -1,27 +1,108 @@
 ---
-	import lain from '../assets/8831s/pngs/lain.png'
-	import sucks from '../assets/8831s/gifs/sucks.gif'
-	import trans from '../assets/8831s/gifs/trans.gif'
-	import wust from '../assets/8831s/gifs/wust.gif'
-	import nixos from '../assets/8831s/gifs/nixos.gif'
-	import blahaj from '../assets/8831s/pngs/blahaj.png'
-	import boykisser from '../assets/8831s/pngs/boykisser.png'
-	import { Image } from 'astro:assets';
+import lain from "../assets/8831s/pngs/lain.png";
+import sucks from "../assets/8831s/gifs/sucks.gif";
+import trans from "../assets/8831s/gifs/trans.gif";
+import wust from "../assets/8831s/gifs/wust.gif";
+import nixos from "../assets/8831s/gifs/nixos.gif";
+import blahaj from "../assets/8831s/pngs/blahaj.png";
+import boykisser from "../assets/8831s/pngs/boykisser.png";
+import right_to_repair from "../assets/8831s/pngs/right-to-repair.png";
+import anybrow from "../assets/8831s/gifs/anybrow.gif";
+import css from "../assets/8831s/pngs/css.png";
+import caramelldansen from "../assets/8831s/gifs/caramelldansen.gif";
+import miku from "../assets/8831s/gifs/nyaabanner.gif";
+import glados from "../assets/8831s/gifs/glados.gif";
+import { Image } from "astro:assets";
 ---
+
 <div class="relative flex flex-col grow">
 	<div class="flex grow"></div>
 	<div
 		class="flex flex-wrap w-full bg-ctp-mantle p-4 pt-8 gap-2 justify-center"
 	>
-	<div class="flex flex-wrap w-full justify-center">
-		<a href="https://nixos.org/" target="_blank"><Image src={nixos} alt="wust 88x31" title="My clusterfuck runs on nixos!"/></a>
-		<a href="https://www.ikea.com/us/en/p/blahaj-soft-toy-shark-90373590/" target="_blank"><Image src={blahaj} alt="blahaj 88x31" title="blahaj says trans rights!"/></a>
-		<a href="https://en.wikipedia.org/wiki/LGBTQ_people" target="_blank"><Image src={boykisser} alt="blahaj 88x31" title="you like kissing boys, don't you?"/></a>
-		<a href="https://github.com/CaffeinatedOpe/blog"><Image src={sucks} alt="this website sucks 88x31" title="I'd know, I made it"/></a>
-		<a href="https://en.wikipedia.org/wiki/Serial_Experiments_Lain"><Image src={lain} alt="lain 88x31" title="and you don't seem to understand"/></a>
-		<a href="https://diyhrt.wiki/" target="_blank"><Image src={trans} alt="trans your gender 88x31" title="if you want"/></a>
-		<a href="https://rust-lang.org/" target="_blank"><Image src={wust} alt="wust 88x31" title="leawn wust!"/></a>
-	</div>
+		<div class="flex flex-wrap w-full justify-center">
+			<a href="https://nixos.org/" target="_blank"
+				><Image
+					src={nixos}
+					alt="wust 88x31"
+					title="My clusterfuck runs on nixos!"
+				/></a
+			>
+			<a
+				href="https://www.ikea.com/us/en/p/blahaj-soft-toy-shark-90373590/"
+				target="_blank"
+				><Image
+					src={blahaj}
+					alt="blahaj 88x31"
+					title="blahaj says trans rights!"
+				/></a
+			>
+			<a href="https://www.w3.org/standards/" target="_blank"
+				><Image
+					src={anybrow}
+					alt="Any browser 88x31"
+					title="the web is standardized for a reason"
+				/></a
+			>
+			<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank"
+				><Image src={css} alt="css 88x31" title="god i fucking hate css" /></a
+			>
+			<a href="https://youtu.be/6-8E4Nirh9s" target="_blank"
+				><Image
+					src={caramelldansen}
+					alt="caramelldansen 88x31"
+					title="ooh ooh uwo uwo"
+				/></a
+			>
+			<a href="https://consumerrights.wiki" target="_blank"
+				><Image
+					src={right_to_repair}
+					alt="Right To Repair 88x31"
+					title="Own what you pay for!"
+				/></a
+			>
+			<a href="https://store.steampowered.com/app/620/Portal_2/" target="_blank"
+				><Image
+					src={glados}
+					alt="glados 88x31"
+					title="How are you holding up? Because I’m a potato."
+				/></a
+			>
+			<a href="https://en.wikipedia.org/wiki/LGBTQ_people" target="_blank"
+				><Image
+					src={boykisser}
+					alt="blahaj 88x31"
+					title="you like kissing boys, don't you?"
+				/></a
+			>
+			<a href="https://en.wikipedia.org/wiki/Hatsune_Miku" target="_blank"
+				><Image src={miku} alt="miku 88x31" title="Miku dayo" /></a
+			>
+			<a href="https://github.com/CaffeinatedOpe/blog"
+				><Image
+					src={sucks}
+					alt="this website sucks 88x31"
+					title="I'd know, I made it"
+				/></a
+			>
+			<a href="https://en.wikipedia.org/wiki/Serial_Experiments_Lain"
+				><Image
+					src={lain}
+					alt="lain 88x31"
+					title="and you don't seem to understand"
+				/></a
+			>
+			<a href="https://diyhrt.wiki/" target="_blank"
+				><Image
+					src={trans}
+					alt="trans your gender 88x31"
+					title="if you want"
+				/></a
+			>
+			<a href="https://rust-lang.org/" target="_blank"
+				><Image src={wust} alt="wust 88x31" title="leawn wust!" /></a
+			>
+		</div>
 		<div class="flex-row flex w-full justify-center">
 			<a href="https://github.com/caffeinatedope"
 				><img

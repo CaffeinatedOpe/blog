@@ -1,5 +1,6 @@
 ---
-import Layout from "../layouts/nopreflight.astro";
+import Layout from "../layouts/default.astro";
+import Prose from '../components/Prose.astro';
 import { marked } from 'marked';
 
 const response = await fetch(
@@ -13,7 +14,7 @@ const content = marked.parse(markdown);
 <title>Awesome</title>
 
 <Layout>
-	<div class="mx-16">
+	<Prose>
 		<article set:html={content} class="mx-4"/>
-	</div>
+	</Prose>
 </Layout>

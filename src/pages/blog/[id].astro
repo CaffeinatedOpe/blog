@@ -1,6 +1,5 @@
 ---
-import Layout from "../../layouts/nopreflight.astro";
-import Prose from '../../components/Prose.astro';
+import Layout from "../../layouts/default.astro";
 import { getEntry, render } from "astro:content";
 // 1. Generate a new path for every collection entry
 const { id } = Astro.params;
@@ -16,11 +15,16 @@ if (post === undefined) {
 // 4. Render the entry to HTML in the template
 const { Content } = await render(post);
 ---
+
 <title>{post.data.title}</title>
 <Layout>
-	<div class="lg:mx-64 mx-8 text-center">
-		<Prose>
-		<Content/>
-		</Prose>
+	<div
+		class="prose prose dark:prose-invert
+  	prose-h1:font-bold prose-h1:text-3xl
+		prose-img:rounded-xl
+  	prose-img:max-w-full prose-img:h-auto prose-img:m-auto
+		max-w-full align-center justify-center lg:m-16 m-4 text-center"
+	>
+		<Content />
 	</div>
 </Layout>

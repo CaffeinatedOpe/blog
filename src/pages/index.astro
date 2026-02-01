@@ -23,7 +23,7 @@ const projects = await getCollection("github");
 					projects.map((project) => (
 							<a
 								href={`/projects/${project.id}`}
-								class="p-4 flex lg:flex-row flex-col flex-1 max-w-175 basis-full flex-col bg-ctp-mantle rounded-2xl items-center"
+								class="p-4 flex lg:flex-row flex-col flex-1 max-w-130 basis-full flex-col bg-ctp-mantle rounded-2xl items-center"
 							>
 								<div class="flex flex-col flex-wrap items-center justify-center text-l p-4 flex-3">
 									<div class="text-2xl p-4 text-center">{project.data.title}</div>
@@ -57,7 +57,7 @@ const projects = await getCollection("github");
 					posts.map((post) => (
 						<a
 							href={`/blog/${post.id}`}
-							class="p-4 flex lg:flex-row flex-col flex-1 max-w-175 basis-full flex-col bg-ctp-mantle rounded-2xl items-center"
+							class="p-4 flex lg:flex-row flex-col flex-1 max-w-130 basis-full flex-col bg-ctp-mantle rounded-2xl items-center"
 						>
 							<div class="flex flex-col flex-wrap items-center justify-center text-l p-4 flex-3">
 								<div class="text-2xl p-4 text-center">

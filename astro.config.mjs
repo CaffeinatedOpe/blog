@@ -17,5 +17,6 @@ export default defineConfig({
     mode: 'standalone'
   }),
 
-	output: 'server'
+	output: 'server',
+	site: 'https://caffeinatedope.net'
 });

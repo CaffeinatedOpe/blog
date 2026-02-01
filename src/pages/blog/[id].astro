@@ -15,10 +15,9 @@ if (post === undefined) {
 // 4. Render the entry to HTML in the template
 const { Content } = await render(post);
 ---
-
 <title>{post.data.title}</title>
 <Layout>
 	<div class="lg:mx-64 mx-8 text-center">
-		<Content class="text-justify"/>
+		<Content class="text-justify" />
 	</div>
 </Layout>

@@ -16,5 +16,14 @@
 		"description": "The source code to my blog",
 		"thumbnail_light": "../assets/project-files/blog_light.png",
 		"thumbnail_dark": "../assets/project-files/blog_dark.png"
+	},
+	"snowflake": {
+		"id": "snowflake",
+		"title": "LED Snowflake",
+		"url": "https://github.com/CaffeinatedOpe/led-snowflake",
+		"readMeUrl": "https://github.com/CaffeinatedOpe/led-snowflake/raw/refs/heads/master/README-alt.md",
+		"description":"my big-ass led snowflake",
+		"thumbnail_light": "../assets/project-files/purple.png",
+		"thumbnail_dark": "../assets/project-files/purple.png"
 	}
 }

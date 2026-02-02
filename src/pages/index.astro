@@ -29,15 +29,15 @@ const projects = await getCollection("github");
 									<div class="text-2xl p-4 text-center">{project.data.title}</div>
 									<div class="text-center">{project.data.description}</div>
 								</div>
-								<div class="min-w-32 aspect-3/2 flex-2">
+								<div class="min-w-32 aspect-3/2 flex-2 max-w-130">
 									<Image
 										src={project.data.thumbnail_light}
-										class="dark:hidden inline"
+										class="dark:hidden inline object-contain aspect-3/2"
 										alt="project image"
 									/>
 									<Image
 										src={project.data.thumbnail_dark}
-										class="dark:inline hidden"
+										class="dark:inline hidden object-contain aspect-3/2"
 										alt="project image"
 									/>
 								</div>
@@ -66,15 +66,15 @@ const projects = await getCollection("github");
 								</div>
 								<div class="text-center">{post.data.description}</div>
 							</div>
-							<div class="min-w-32 aspect-3/2 flex-2">
+							<div class="min-w-32 aspect-3/2 flex-2 max-w-100%">
 								<Image
 									src={post.data.thumbnail_light}
-									class="dark:hidden inline"
+									class="dark:hidden inline object-contain aspect-3/2"
 									alt="blogpost image"
 								/>
 								<Image
 									src={post.data.thumbnail_dark}
-									class="dark:inline hidden"
+									class="dark:inline hidden object-contain aspect-3/2"
 									alt="blogpost image"
 								/>
 							</div>

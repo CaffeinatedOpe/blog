@@ -31,7 +31,7 @@ pipeline {
 				}
 			}
 		}
-    stage('build and push') {
+    stage('package and push') {
       steps {
         container('buildkit') {
 	        sh 'buildctl-daemonless.sh build . --output type=image,name=ghcr.io/caffeinatedope/blog,push=true,tag=$(date +%s) --frontend dockerfile.v0 --local context=. --local dockerfile=ci/.'

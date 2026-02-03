@@ -4,6 +4,8 @@ metadata:
   name: buildkit
 spec:
   containers:
+    - name: node
+      image: node:alpine
     - name: buildkit
       image: moby/buildkit:latest
       securityContext:

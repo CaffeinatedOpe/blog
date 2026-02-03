@@ -20,7 +20,9 @@ pipeline {
 		stage('install dependencies') {
 			steps {
 				container ('node') {
-					sh 'cd /home/jenkins/agent/workspace/blog/ && npm install'
+					dir('/home/jenkins/agent/workspace/blog/') {
+						sh'npm install'
+					}
 				}
 			}
 		}
@@ -36,7 +38,9 @@ pipeline {
     stage('build and push') {
       steps {
         container('buildkit') {
-          sh 'cd /home/jenkins/agent/workspace/blog/ && buildctl-daemonless.sh build . --output type=image,name=ghcr.io/caffeinatedope/blog,push=true,tag=$(date +%s) --frontend dockerfile.v0 --local context=. --local dockerfile=ci/.'
+					dir('/home/jenkins/agent/workspace/blog/') {
+	          sh 'buildctl-daemonless.sh build . --output type=image,name=ghcr.io/caffeinatedope/blog,push=true,tag=$(date +%s) --frontend dockerfile.v0 --local context=. --local dockerfile=ci/.'
+					}
         }
       }
     }

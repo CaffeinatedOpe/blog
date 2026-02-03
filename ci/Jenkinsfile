@@ -19,7 +19,9 @@ pipeline {
     }
 		stage('install dependencies') {
 			steps {
-				sh 'npm install'
+				container ('node') {
+					sh 'cd && npm install'
+				}
 			}
 		}
 		stage('build') {

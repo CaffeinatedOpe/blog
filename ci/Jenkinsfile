@@ -19,23 +19,20 @@ pipeline {
     }
 		stage('install dependencies') {
 			steps {
-				dir '/workbench/blog'
 				sh 'npm install'
 			}
 		}
 		stage('build') {
 			steps {
 				container('node') {
-					dir '/workbench/blog'
-					sh 'npm build'
+					sh 'cd blog && npm build'
 				}
 			}
 		}
     stage('build and push') {
       steps {
         container('buildkit') {
-					dir '/workbench/blog'
-          sh 'buildctl-daemonless.sh build . --output type=image,name=ghcr.io/caffeinatedope/blog,push=true,tag=$(date +%s) --frontend dockerfile.v0 --local context=. --local dockerfile=ci/.'
+          sh 'cd blog && buildctl-daemonless.sh build . --output type=image,name=ghcr.io/caffeinatedope/blog,push=true,tag=$(date +%s) --frontend dockerfile.v0 --local context=. --local dockerfile=ci/.'
         }
       }
     }

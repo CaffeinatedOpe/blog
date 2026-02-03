@@ -6,6 +6,9 @@ spec:
   containers:
     - name: node
       image: node:alpine
+      command:
+      - cat
+      tty: true
     - name: buildkit
       image: moby/buildkit:latest
       securityContext:

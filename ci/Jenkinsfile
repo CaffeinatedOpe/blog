@@ -30,7 +30,7 @@ pipeline {
 			steps {
 				container('node') {
 					dir('/home/jenkins/agent/workspace/blog/') {
-						sh 'npm build'
+						sh 'npm run build'
 					}
 				}
 			}

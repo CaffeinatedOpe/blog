@@ -20,14 +20,17 @@ pipeline {
 		stage('install dependencies') {
 			steps {
 				container ('node') {
-					sh 'cd && npm install'
+					sh 'cd /home/jenkins/agent/workspace/blog/ && npm install'
 				}
 			}
 		}
 		stage('build') {
 			steps {
 				container('node') {
-					sh 'cd blog && npm build'
+					dir {
+						path: '/home/jenkins/agent/workspace/blog/'
+						sh 'npm build'
+					}
 				}
 			}
 		}

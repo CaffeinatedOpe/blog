@@ -11,9 +11,14 @@ pipeline {
     stage('clone') {
       steps {
         container('buildkit') {
-					checkout scmGit(userRemoteConfigs: [
-                    [ url: 'https://github.com/caffeinatedope/blog.git' ]
-                ])
+					checkout(
+      			[$class: 'GitSCM',
+      			branches: [[name: "master"]],
+      			doGenerateSubmoduleConfigurations: true,
+      			extensions: scm.extensions + [[$class: 'SubmoduleOption', parentCredentials: true]],
+      			userRemoteConfigs: [[credentialsId: 'creds',
+      			url: 'https://github.com/caffeinatedope/blog']]]
+					)
         }
       }
     }

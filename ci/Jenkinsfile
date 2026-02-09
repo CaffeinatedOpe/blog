@@ -11,7 +11,9 @@ pipeline {
     stage('clone') {
       steps {
         container('buildkit') {
-					checkout scmGit(userRemoteConfigs: [
+					checkout scmGit(
+						extensions: [[recursiveSubmodules: true]], 
+						userRemoteConfigs: [
                     [ url: 'https://github.com/caffeinatedope/blog' ]
                 ])
         }

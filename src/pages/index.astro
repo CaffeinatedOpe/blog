@@ -7,7 +7,6 @@ const posts = (await getCollection("blog")).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 ).slice(0, 3);
 const projects = (await getCollection("github")).slice(0, 3);
-console.log(posts);	
 ---
 
 <title>Homepage</title>

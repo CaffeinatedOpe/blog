@@ -17,6 +17,15 @@
 		"thumbnail_light": "../assets/project-files/blog_light.png",
 		"thumbnail_dark": "../assets/project-files/blog_dark.png"
 	},
+	"ricochet": {
+		"id": "ricochet",
+		"title": "Ricochet",
+		"url": "https://github.com/CaffeinatedOpe/ricochet",
+		"readMeUrl": "https://raw.githubusercontent.com/CaffeinatedOpe/ricochet/refs/heads/master/README.md",
+		"description":"A no-thrills, lo-frills link \"shortener\" taking the worst aspects of the Unix and K.I.S.S. philosophies to heart",
+		"thumbnail_light": "../assets/project-files/ricochet_light.png",
+		"thumbnail_dark": "../assets/project-files/ricochet_dark.png"
+	},
 	"snowflake": {
 		"id": "snowflake",
 		"title": "LED Snowflake",

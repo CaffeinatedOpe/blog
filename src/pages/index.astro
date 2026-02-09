@@ -5,8 +5,9 @@ import { Image } from "astro:assets";
 
 const posts = (await getCollection("blog")).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
-const projects = await getCollection("github");
+).slice(0, 3);
+const projects = (await getCollection("github")).slice(0, 3);
+console.log(posts);	
 ---
 
 <title>Homepage</title>
@@ -20,6 +21,7 @@ const projects = await getCollection("github");
 				class="flex flex-row flex-wrap items-center justify-center text-l gap-4 p-4"
 			>
 				{
+					
 					projects.map((project) => (
 							<a
 								href={`/projects/${project.id}`}

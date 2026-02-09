@@ -12,7 +12,7 @@ pipeline {
       steps {
         container('buildkit') {
 					checkout scmGit(
-						extensions: [[recursiveSubmodules: true]], 
+						extensions: [recursiveSubmodules: true], 
 						userRemoteConfigs: [
                     [ url: 'https://github.com/caffeinatedope/blog' ]
                 ])

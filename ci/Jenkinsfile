@@ -11,11 +11,11 @@ pipeline {
     stage('clone') {
       steps {
         container('buildkit') {
-					checkout scmGit(
-						extensions: [recursiveSubmodules: true], 
+					checkout scmGit([
+						extensions: [[recursiveSubmodules: true]], 
 						userRemoteConfigs: [
                     [ url: 'https://github.com/caffeinatedope/blog' ]
-                ])
+                ]])
         }
       }
     }

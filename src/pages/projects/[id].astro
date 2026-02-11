@@ -27,6 +27,6 @@ const content = marked.parse(markdown);
 <Layout>
 	<a href={project.data.url}>Link to the GitHub</a>
 	<Prose>
-		<article set:html={content} class="mx-4"/>
+		<article set:html={content} class="mx-4 prose-code:bg-ctp-surface0 prose-code:p-1 prose-code:rounded-lg prose-code:w-max"/>
 	</Prose>
 </Layout>

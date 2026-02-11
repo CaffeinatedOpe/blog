@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "@catppuccin/tailwindcss/mocha.css";
 @plugin "@tailwindcss/typography";
+@config "./tailwind.config.js";
 
 body {
 	margin: 0%;

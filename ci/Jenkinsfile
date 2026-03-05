@@ -17,7 +17,7 @@ pipeline {
       			doGenerateSubmoduleConfigurations: true,
       			extensions: scm.extensions + [[$class: 'SubmoduleOption', parentCredentials: true]],
       			userRemoteConfigs: [[credentialsId: 'creds',
-      			url: 'https://github.com/caffeinatedope/blog']]]
+      			url: 'https://codeberg.org/caffeinatedope/blog']]]
 					)
         }
       }
@@ -39,7 +39,7 @@ pipeline {
     stage('package and push') {
       steps {
         container('buildkit') {
-	        sh 'buildctl-daemonless.sh build . --output type=image,name=ghcr.io/caffeinatedope/blog,push=true,tag=$(date +%s) --frontend dockerfile.v0 --local context=. --local dockerfile=ci/.'
+	        sh 'buildctl-daemonless.sh build . --output type=image,name=codeberg.org/caffeinatedope/blog,push=true,tag=$(date +%s) --frontend dockerfile.v0 --local context=. --local dockerfile=ci/.'
         }
       }
     }

@@ -22,3 +22,6 @@ spec:
       secret:
         secretName: codeberg-regcred
         defaultMode: 0400
+        items:
+          - key: .dockerconfigjson
+            path: config.json

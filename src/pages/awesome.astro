@@ -1,20 +1,14 @@
 ---
 import Layout from "../layouts/default.astro";
 import Prose from '../components/Prose.astro';
-import { marked } from 'marked';
 
-const response = await fetch(
-	"https://raw.githubusercontent.com/CaffeinatedOpe/Awesome/refs/heads/master/README.md"
-);
-
-const markdown = await response.text();
-const content = marked.parse(markdown);
+import Content from "../data/awesome.md"
 ---
 
 <title>Awesome</title>
 
 <Layout>
 	<Prose>
-		<article set:html={content} class="mx-4"/>
+		<Content/>
 	</Prose>
 </Layout>

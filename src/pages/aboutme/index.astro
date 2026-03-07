@@ -1,20 +1,43 @@
 ---
 import Layout from "../../layouts/default.astro";
-import Prose from "../../components/Prose.astro";
-import { marked } from "marked";
-
-const response = await fetch(
-	"https://raw.githubusercontent.com/CaffeinatedOpe/CaffeinatedOpe/refs/heads/master/README.md",
-);
-
-const markdown = await response.text();
-const content = marked.parse(markdown);
 ---
 
 <title>About Me</title>
 
 <Layout>
-	<Prose>
-		<article set:html={content} class="mx-4" />
-	</Prose>
+	<div class="p-8 px-32 w-full">
+		<h1 class="text-3xl">Hi, I'm CaffeinatedOpe!</h1>
+		<h2 class="text-xl">caffeinated (ˈka-fə-ˌnā-təd)</h2>
+		<ol class="list-decimal list-inside indent-8">
+			<li>stimulated by or as if by caffeine</li>
+		</ol>
+		<h2 class="text-xl">ope (ˈōp)</h2>
+		<ol class="list-decimal list-inside indent-8">
+			<li>an exclamation of surprise</li>
+		</ol>
+		<div class="flex-row flex flex-wrap">
+			<a href="https://github.com/caffeinatedope/"><img alt="GitHub followers" src="https://img.shields.io/github/followers/CaffeinatedOpe"/></a>
+			<a href="https://github.com/caffeinatedope"><img alt="GitHub User's stars" src="https://img.shields.io/github/stars/CaffeinatedOpe"/></a>
+			<a href="https://bsky.app/profile/caffeinatedope.bsky.social"><img alt="Bluesky followers" src="https://img.shields.io/bluesky/followers/caffeinatedope.bsky.social"/></a>
+			<a href="https://bsky.app/profile/caffeinatedope.bsky.social"><img alt="Bluesky posts" src="https://img.shields.io/bluesky/posts/caffeinatedope.bsky.social"/></a>
+			<a href="https://mastodon.social/@CaffeinatedOpe"><img alt="Mastodon Follow" src="https://img.shields.io/mastodon/follow/115979050110951163"/></a>
+		</div>
+		<p>Jackass of all trades.</p>
+		<p>I've done a variety of software and hardware projects, some of which are or will be uploaded to my [github](https://github.com/CaffeinatedOpe) and to [my blog](https://caffeinatedope.net). I'm confident with hardware and software work, and I have experience in:</p>
+		<ol class="list-disc list-inside indent-8">
+			<li>C/C++</li>
+			<li>JavaScript</li>
+			<li>Python</li>
+			<li>Rust</li>
+			<li>Java</li>
+			<li>Docker</li>
+			<li>Kubernetes</li>
+			<li>CI/CD</li>
+			<li>Declarative Configuration/Infrastructure as Code</li>
+			<li>embedded systems</li>
+		</ol>
+		<br/>
+		Want to contact me? Send me an email at <a class="underline" href="mailto:caffeinatedope@proton.me">caffeinatedope@proton.me,</a> or a dm on <a class="underline" href="https://bsky.app/profile/caffeinatedope.bsky.social">bluesky</a> or <a class="underline" href="https://mastodon.social/@CaffeinatedOpe">mastodon</a>
+
+	</div>
 </Layout>

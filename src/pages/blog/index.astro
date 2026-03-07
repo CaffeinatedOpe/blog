@@ -32,12 +32,12 @@ const posts = (await getCollection("blog")).sort(
 					<div class="min-w-32 aspect-3/2 flex-2">
 						<Image
 							src={post.data.thumbnail_light}
-							class="dark:hidden inline"
+							class="dark:hidden object-contain inline"
 							alt="blogpost image"
 						/>
 						<Image
 							src={post.data.thumbnail_dark}
-							class="dark:inline hidden"
+							class="dark:inline object-contain hidden"
 							alt="blogpost image"
 						/>
 					</div>

@@ -10,7 +10,7 @@ if (id === undefined) {
 	return Astro.redirect("/404");
 }
 // 2. Query for the entry directly using the request slug
-const project = await getEntry("github", id);
+const project = await getEntry("projects", id);
 // 3. Redirect if the entry does not exist
 if (project === undefined) {
 	return Astro.redirect("/404");
@@ -25,7 +25,7 @@ const content = marked.parse(markdown);
 <title>Projects</title>
 
 <Layout>
-	<a href={project.data.url}>Link to the GitHub</a>
+	<a href={project.data.url}>Link to the repo</a>
 	<Prose>
 		<article set:html={content} class="mx-4 prose-code:bg-ctp-surface0 prose-code:p-1 prose-code:rounded-lg prose-code:w-max"/>
 	</Prose>

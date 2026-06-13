@@ -1,6 +1,7 @@
 {
 	"iac": {
 		"id": "iac",
+		"sort": 0,
 		"title": "Infrastructure as Code",
 		"url": "https://codeberg.org/CaffeinatedOpe/infrastructure-as-code",
 		"readMeUrl": "https://codeberg.org/CaffeinatedOpe/infrastructure-as-code/raw/branch/master/README.md",
@@ -10,6 +11,7 @@
 	},
 	"blog": {
 		"id": "blog",
+		"sort": 1,
 		"title": "Blog",
 		"url": "https://codeberg.org/CaffeinatedOpe/blog",
 		"readMeUrl": "https://codeberg.org/CaffeinatedOpe/blog/raw/branch/master/README.md",
@@ -19,6 +21,7 @@
 	},
 	"ricochet": {
 		"id": "ricochet",
+		"sort": 2,
 		"title": "Ricochet",
 		"url": "https://codeberg.org/CaffeinatedOpe/ricochet",
 		"readMeUrl": "https://codeberg.org/CaffeinatedOpe/ricochet/raw/branch/master/README.md",
@@ -28,11 +31,22 @@
 	},
 	"snowflake": {
 		"id": "snowflake",
+		"sort": 3,
 		"title": "LED Snowflake",
 		"url": "https://codeberg.org/CaffeinatedOpe/led-snowflake",
 		"readMeUrl": "https://codeberg.org/CaffeinatedOpe/led-snowflake/raw/branch/master/README-alt.md",
 		"description":"my big-ass led snowflake",
 		"thumbnail_light": "../assets/project-files/purple.png",
 		"thumbnail_dark": "../assets/project-files/purple.png"
+	},
+		"vrpatpat": {
+		"id": "vrpatpat",
+		"sort": 4,
+		"title": "The VRPatPat",
+		"url": "https://codeberg.org/CaffeinatedOpe/vrpatpat",
+		"readMeUrl": "https://codeberg.org/CaffeinatedOpe/vrpatpat/raw/branch/master/README.md",
+		"description": "My Haptic Headstrap",
+		"thumbnail_light": "../assets/project-files/cat_ears_0.jpg",
+		"thumbnail_dark": "../assets/project-files/cat_ears_0.jpg"
 	}
 }

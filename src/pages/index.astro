@@ -6,7 +6,9 @@ import { Image } from "astro:assets";
 const posts = (await getCollection("blog")).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 ).slice(0, 3);
-const projects = (await getCollection("projects")).slice(0, 3);
+const projects = (await getCollection("projects")).sort(
+	(a, b) => b.data.sort.valueOf() - a.data.sort.valueOf(),
+).slice(0, 3);
 ---
 
 <title>Homepage</title>
